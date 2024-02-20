@@ -30,7 +30,30 @@ p {
     margin-bottom: 0px !important;
 }
 
+.rw {
+    padding-right: 0px !important;
+}
+
+.rwabout {
+    display: flex;
+    padding-right: 0px !important;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-poster {
+    margin-top: 2vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.img {
+    width: 50% !important;
+}
+
 .description {
+    font-size: large;
     margin-top: 1rem;
 }
 
@@ -80,6 +103,7 @@ form feild
     font-size: 17px;
     color: #9b9b9b;
     pointer-events: none;
+    font-weight: 500;
 }
 
 .form__field:focus {
@@ -112,6 +136,11 @@ span.choose {
     color: #555;
     padding: 5px 0 10px;
     display: inherit
+}
+
+.ts,
+.choice {
+    font-weight: 500;
 }
 
 /*Styling Selectbox*/
@@ -210,7 +239,7 @@ span.choose {
 
 .dropdown1 .select>i {
     font-size: 13px;
-    color: #9b9b9b;
+    color: #000000;
     cursor: pointer;
     transition: all .3s ease-in-out;
     float: right;
@@ -240,7 +269,7 @@ span.choose {
     padding: 5px;
     transition: all .2s ease-in-out;
     cursor: pointer;
-    color: #9b9b9b;
+    color: #000000;
 }
 
 .dropdown1 .dropdown-menu1 {
@@ -290,9 +319,42 @@ form
     margin-bottom: 20px;
 }
 
-.btn {
-    width: fit-content !important;
-    background-color: #0C71C3 !important;
+.btn1 {
+    padding: 10px 25px;
+    font-weight: 500;
+    background: transparent;
+    border-radius: 10px;
+    outline: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    color: #9b9b9b;
+    border: 2px solid #0C71C3;
+    z-index: 1;
+}
+
+.btn1:hover {
+    color: white;
+}
+
+.btn1:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: #0C71C3;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn1:hover:after {
+    top: auto;
+    bottom: 0;
+    height: 100%;
 }
 
 form {
@@ -301,6 +363,34 @@ form {
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+/* .circle {
+    background-color: #555;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+} */
+
+.span-slider {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.span-slider a {
+    display: none;
+    background-color: #b8b8b8;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    margin: 3px;
+}
+
+a:active {
+    background-color: #9b9b9b !important;
+    height: 12px;
+    width: 12px;
 }
 
 .submit {
@@ -312,7 +402,7 @@ FOOTER
 *******************/
 .footer {
     background-color: #202332;
-    color: #666;
+    color: #d3d3d3;
     padding: 15px 0;
 }
 
@@ -341,7 +431,7 @@ FOOTER
 
 
 .sm-logo {
-    color: #666;
+    color: #d3d3d3;
     margin: 10px;
     font-size: 20px !important;
 }
@@ -349,6 +439,12 @@ FOOTER
 /********************************
 MEDIA QUERIES
 ********************************/
+
+@media screen and (min-width: 768px) {
+    .container {
+        min-width: 85vw !important;
+    }
+}
 
 @media screen and (max-width: 425px) {
     .logo {
@@ -362,11 +458,31 @@ MEDIA QUERIES
 }
 
 @media screen and (max-width: 576px) {
+
+    .img {
+        width: 100% !important;
+    }
+
+    .description {
+        font-size: small;
+    }
+
+    .span-slider {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .span-slider a {
+        display: block !important;
+    }
+
     .participants {
         display: flex;
         overflow-x: scroll;
         margin: 10px auto;
         padding: 10px;
+        scroll-behavior: smooth;
         scroll-snap-type: x mandatory;
     }
 
